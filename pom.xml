@@ -84,18 +84,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
-				<configuration>
-					<argLine>${argLine} -Xmx2048m</argLine>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.2</version>
+				<version>0.8.7</version>
 				<executions>
 					<execution>
 						<goals>
@@ -104,7 +95,7 @@
 					</execution>
 					<!-- attached to Maven test phase -->
 					<execution>
-						<id>report</id>
+						<id>report-test</id>
 						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
