@@ -33,11 +33,13 @@ pipeline {
                 scannerHome = tool 'ani-sonar-scanner'
             }
             steps{
+                echo '----------- starting sonar analysis stage ----------'
                 /* groovylint-disable-next-line LineLength */
                 /* groovylint-disable-next-line LineLength */
                 withSonarQubeEnv('ani-sonar-server') { // If you have configured more than one global server connection, you can specify its name
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
+                echo '----------- ending sonar analysis stage ----------'
             }
         }
     }
